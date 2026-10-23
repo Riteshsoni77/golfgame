@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Subscription.css";
+import server from "../../environment";
 
 function SubscriberDashboard() {
   const [scores, setScores] = useState([]);
@@ -21,8 +22,8 @@ function SubscriberDashboard() {
         };
 
         const [scoreResponse, charityResponse] = await Promise.all([
-          axios.get("http://localhost:3000/api/golf-scores", config),
-          axios.get("http://localhost:3000/api/charity/impact/me", config),
+          axios.get(`${server}/api/golf-scores`, config),
+          axios.get(`${server}/api/charity/impact/me`, config),
         ]);
 
         setScores(scoreResponse.data.scores || []);

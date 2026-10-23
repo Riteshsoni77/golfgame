@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./GolfScores.css";
 import { useNavigate } from "react-router";
+import server from "../../environment";
 
-const API_URL = "http://localhost:3000/api/golf-scores";
+const API_URL = `${server}/api/golf-scores`;
 
 function GolfScores() {
   const [scores, setScores] = useState([]);

@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Charity from "../component/Charity.jsx";
 import "./Subscription.css";
+import server from "../../environment.js";
 
 function Subscription() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function Subscription() {
 
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/subscription",
+          `${server}/api/subscription`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -93,7 +94,7 @@ function Subscription() {
       setIsSubmitting(true);
 
       await axios.post(
-        "http://localhost:3000/api/subscription",
+        `${server}/api/subscription`,
         { plan: selectedPlan },
         {
           headers: {

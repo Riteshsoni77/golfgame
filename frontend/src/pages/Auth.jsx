@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Auth.css";
+import server from "../../environment";
 
 function Auth() {
   const navigate = useNavigate();
@@ -22,8 +23,8 @@ async function handleSubmit(event) {
 
   try {
     const url = isRegister
-      ? "http://localhost:3000/api/user/register"
-      : "http://localhost:3000/api/user/login";
+      ? `${server}/api/user/register`
+      : `${server}/api/user/login`;
 
     const requestData = isRegister
       ? {
@@ -61,7 +62,7 @@ async function handleSubmit(event) {
     // Fetch subscription
     try {
       const subscriptionResponse = await axios.get(
-        "http://localhost:3000/api/subscription",
+        `${server}/api/subscription`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

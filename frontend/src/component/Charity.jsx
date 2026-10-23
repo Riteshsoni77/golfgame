@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import server from "../../environment";
 
 function Charity({ onSkip }) {
   const [charities, setCharities] = useState([]);
@@ -9,11 +10,12 @@ function Charity({ onSkip }) {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
+
   useEffect(() => {
     async function fetchCharities() {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/charity"
+          `${server}/api/charity`
         );
 
         setCharities(response.data.charities || []);
@@ -52,7 +54,7 @@ function Charity({ onSkip }) {
       setSaving(true);
 
       const response = await axios.patch(
-        "http://localhost:3000/api/charity/select",
+        `${server}/api/charity/select`,
         {
           charityId: selectedCharity,
           charityPercentage: Number(percentage),
