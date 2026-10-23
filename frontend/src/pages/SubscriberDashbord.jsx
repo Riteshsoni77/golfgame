@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./SubscriberDashbord.css";
 import server from "../../environment";
+import { useNavigate } from "react-router";
 
 function SubscriberDashboard() {
   const [scores, setScores] = useState([]);
   const [charityImpact, setCharityImpact] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("golfToken");
