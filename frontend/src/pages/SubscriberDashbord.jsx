@@ -126,7 +126,8 @@ function SubscriberDashboard() {
               <span className="panel-label">YOUR PERFORMANCE</span>
               <h2>Recent golf scores</h2>
             </div>
-            <a href="/golf-scores">Manage scores ↗</a>
+           
+            <button  className="dashboard-button" onClick={() => navigate("/golf-scores")}>manage scores</button>
           </div>
 
           {scores.length === 0 ? (
@@ -137,9 +138,9 @@ function SubscriberDashboard() {
                 Add a Stableford score between 1 and 45,
                 along with the date of your round.
               </p>
-              <a href="/golf-scores" className="dashboard-button">
+              <button  className="dashboard-button" onClick={() => navigate("/golf-scores")}>
                 Add your first score
-              </a>
+              </button>
             </div>
           ) : (
             <div className="score-list">
@@ -201,9 +202,10 @@ function SubscriberDashboard() {
             <div className="empty-state">
               <span>💚</span>
               <p>You haven't selected a charity yet.</p>
-              <a href="/charities" className="dashboard-button">
+             
+              <button    onClick={() => navigate("/charities")} className="dashboard-button">
                 Choose a charity
-              </a>
+              </button>
             </div>
           )}
         </article>

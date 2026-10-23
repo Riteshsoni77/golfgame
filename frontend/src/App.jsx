@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
  import SubscriberDashboard from "./pages/SubscriberDashbord";
 import GolfScores from "./component/GolfScores";
 import AdminDashboard from "./pages/AdminDashboard";
+import Charity from "./component/Charity";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/register" element={<Auth />} />
          <Route path="/subscription" element={<Subscription />} />
        <Route path="/dashboard" element={<SubscriberDashboard/>} /> 
+       <Route path="/charities" element={<Charity />} />
        <Route path="/golf-scores" element={<GolfScores/>} />
        <Route path="/admin" element={ <AdminDashboard />  }
 />
