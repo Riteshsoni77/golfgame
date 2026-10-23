@@ -68,7 +68,7 @@ function SubscriberDashboard() {
           <button onClick={() => {
             localStorage.removeItem("golfToken");
             localStorage.removeItem("golfUser");
-            window.location.href = "/login";
+            navigate("/login");
           }}>logout</button>
           <p>Track your game. Support a cause. Be part of the draw.</p>
         </div>
