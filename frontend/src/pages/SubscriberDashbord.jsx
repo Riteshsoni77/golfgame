@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./Subscription.css";
+import "./SubscriberDashbord.css";
 import server from "../../environment";
 
 function SubscriberDashboard() {
