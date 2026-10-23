@@ -244,7 +244,7 @@ function SubscriberDashboard() {
       </section>
 
       <footer className="dashboard-footer">
-        Digital Heroes · Play with purpose.
+        
       </footer>
     </main>
   );
